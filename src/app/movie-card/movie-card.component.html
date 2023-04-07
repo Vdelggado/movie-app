@@ -1,0 +1,5 @@
+<div class="card" *ngFor="let pelicula of peliculas" (click) = "mostrarDescrip(pelicula.id)">
+    <img src="{{imgUrl+pelicula.poster_path}}" alt="imagen de la pelicula">
+    <p class="title">{{pelicula.title}}</p>
+    <p class="date">{{pelicula.release_date | date: 'dd MMMM yyyy'}}</p>
+</div>

@@ -1,0 +1,27 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1{
+    color:black;
+    font-size: 30pt;
+    margin: 20px;
+}
+.trends{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0);
+}
+.cardCont{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+}
