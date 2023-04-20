@@ -1,10 +1,32 @@
 <div class="descripContainer">
-    <img src="" alt="">
+    <img src="{{imgUrl+arrDetalle.poster_path}}" alt="">
     <div class="content">
         <div class="headercontent">
-            <h2>hola</h2>
-            <p></p>
+            <h1>{{arrDetalle.title}}</h1>
+            <div class="headDescrip">
+                <p>{{arrDetalle.release_date}}</p>
+                <div class="genero">
+                    <p *ngFor="let genero of arrDetalle.genres">{{genero.name}}</p>
+                </div>
+            </div>
         </div>
-        <p>resumen</p>
+        <div class="body">
+            <h2 class="tagline">{{arrDetalle.tagline}}</h2>
+            <h2>Resumen</h2>
+            <p>{{arrDetalle.overview}}</p>
+        </div>
     </div>
 </div>
+    <div class="actoresContainer">
+        <h3>Actores Principales</h3>
+        <div class="actores">
+            <div class="actor" *ngFor="let actor of arrActores.cast.slice(0,10)">
+                <img src="{{imgUrl+actor.profile_path}}" alt="">
+                <div class="actorDescrip">
+                    <p>{{actor.name}}</p>
+                    <p>{{actor.character}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+

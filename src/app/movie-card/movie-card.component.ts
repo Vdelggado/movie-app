@@ -8,13 +8,11 @@ import { Router } from '@angular/router';
 })
 export class MovieCardComponent {
     constructor(private router: Router){}
-   arrPeliculas : any =[]
+      arrPeliculas : any =[]
     @Input() peliculas: any = [];
    imgUrl : string ='https://www.themoviedb.org/t/p/w600_and_h900_bestv2';
 
    mostrarDescrip(id: number){
-      console.log({id});
-      this.router.navigate(['/descrip'],{ queryParams: { sharedVariable: id } });
-      
+      this.router.navigate(['/descrip'],{ queryParams: { id: id } });
    }
 }

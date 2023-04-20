@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DatosMovieService } from './datos-movie.service';
+import { DatosMovieService } from './service/datos-movie.service';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MovieDescripComponent } from './movie-descrip/movie-descrip.component';
 import { MovieListComponent } from './movie-list/movie-list.component';

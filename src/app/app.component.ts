@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DatosMovieService } from './datos-movie.service';
+import { DatosMovieService } from './service/datos-movie.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
