@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { DatosMovieService } from '../service/datos-movie.service';
+import { DatosMovieService } from '../../service/datos-movie.service';
+import { Respuesta, Tipos} from '../../models/card.model';
+
 
 @Component({
   selector: 'app-movie-list',
@@ -8,14 +10,14 @@ import { DatosMovieService } from '../service/datos-movie.service';
 })
 export class MovieListComponent {
   constructor( private peliculas : DatosMovieService){}
-  arrPeliculas : any =[];
+  arrPeliculas !: Tipos[]
   arrTrends : any = [];
 ngOnInit() {
- this.peliculas.obtenerPeliculas().subscribe((datos: any) => {
+ this.peliculas.obtenerPeliculas().subscribe((datos: Respuesta) => {
      this.arrPeliculas = datos.results;
  })
 
- this.peliculas.obtenerPopular().subscribe((datos: any) => {
+ this.peliculas.obtenerPopular().subscribe((datos:any) => {
   this.arrTrends = datos.results
 })
 }

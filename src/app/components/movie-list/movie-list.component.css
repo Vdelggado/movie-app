@@ -5,16 +5,16 @@ main{
 }
 
 h1{
-    color:black;
+    color:white;
     font-size: 30pt;
     margin: 20px;
 }
 .trends{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     align-items: center;
     justify-content: center;
+    gap: 20px;
     color: white;
     padding: 20px;
     background-color: rgba(0, 0, 0);
@@ -24,6 +24,8 @@ h1{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    color: white;
     width: 1200px;
 }
+
 

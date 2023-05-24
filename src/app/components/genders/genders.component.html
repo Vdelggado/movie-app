@@ -1,0 +1,5 @@
+<div class="container">
+    <div class="gender-container" *ngFor="let genero of generos" (click) ="peliculaXGenero(genero.id)">
+        <p><strong>{{genero.name}}</strong></p>
+    </div>
+</div>

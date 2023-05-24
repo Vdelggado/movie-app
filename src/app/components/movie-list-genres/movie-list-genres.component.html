@@ -1,0 +1,12 @@
+<main>
+  <section>
+    <div class="movie-container" *ngFor="let pelicula of peliculas">
+      <img src="{{imgUrl+pelicula.poster_path}}" alt="">
+      <div class="movie-info">
+        <h3>{{pelicula.title}}</h3>
+        <p>{{pelicula.release_date}}</p>
+        <p>{{pelicula.overview}}</p>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DatosMovieService } from '../service/datos-movie.service';
+import { DatosMovieService } from '../../service/datos-movie.service';
+import { Tipos } from '../../models/card.model';
 @Component({
   selector: 'app-movie-descrip',
   templateUrl: './movie-descrip.component.html',
@@ -8,8 +9,25 @@ import { DatosMovieService } from '../service/datos-movie.service';
 })
 export class MovieDescripComponent {
   public id: string = '';
-  arrDetalle: any = {}
-  arrActores : any = []
+  arrDetalle : Tipos  = {
+    adult: false,
+    backdrop_path: '',
+    genre_ids: [],
+    id: 0,
+    original_language: '',
+    original_title: '',
+    overview: '',
+    popularity: 0,
+    poster_path: '',
+    release_date: new Date(),
+    title: '',
+    video: false,
+    vote_average: 0,
+    vote_count: 0,
+    tagline: '',
+    genres: []
+  };
+  arrActores : any = [];
   imgUrl :string = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2';
   constructor(private route: ActivatedRoute, private dataService: DatosMovieService ) { }
 
@@ -17,7 +35,7 @@ export class MovieDescripComponent {
     this.route.queryParams.subscribe(params => {
       this.id = params['id'];
     });
-  this.dataService.detallePelicula(this.id).subscribe((datos: any) => this.arrDetalle = datos);
+  this.dataService.detallePelicula(this.id).subscribe((datos: Tipos) => this.arrDetalle = datos);
   this.dataService.obtenerActores(this.id).subscribe((datos: any) => this.arrActores = datos);
 }
 }
