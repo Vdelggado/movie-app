@@ -1,5 +1,4 @@
 <main>
-
     <div class="descripContainer">
         <img src="{{imgUrl+arrDetalle.poster_path}}" alt="">
         <div class="content">
@@ -22,8 +21,8 @@
         <div class="actoresContainer">
             <h3>Actores Principales</h3>
             <div class="actores">
-                <div class="actor" *ngFor="let actor of arrActores.cast.slice(0,12)">
-                    <img src="{{imgUrl+actor.profile_path}}" alt="">
+                <div class="actor" *ngFor="let actor of arrActores.slice(0,12)">
+                    <img src="{{actor.profile_path}}" alt="">
                     <div class="actorDescrip">
                         <p>{{actor.name}}</p>
                         <p>{{actor.character}}</p>

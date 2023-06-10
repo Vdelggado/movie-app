@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Respuesta,Tipos } from 'src/app/models/card.model';
 import { DatosMovieService } from 'src/app/service/datos-movie.service';
 
@@ -12,7 +12,7 @@ export class MovieListGenresComponent {
   id: number=0;
   peliculas: Tipos[] =[];
   imgUrl : string ='https://www.themoviedb.org/t/p/w600_and_h900_bestv2';
-  constructor(private route: ActivatedRoute, private dataService: DatosMovieService){
+  constructor(private route: ActivatedRoute, private dataService: DatosMovieService, private router: Router){
 
   }
  ngOnInit(){
@@ -24,4 +24,8 @@ export class MovieListGenresComponent {
   })
 
  }
+
+ descripcionPelicula(id:number){
+    this.router.navigate(['/descrip'], {queryParams: {id: id}})
+}
 }

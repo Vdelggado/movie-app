@@ -1,13 +1,15 @@
 main{
     background-color: white;
+    overflow: hidden;
 }
 .descripContainer{
-    background-color: bisque;
+    background-color: #0d1b2a;
     width: 100vw;
     height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 img{
     width: 300px;
@@ -19,7 +21,6 @@ img{
     height: 80%;
     width: 1200px;
     padding: 20px;
-  background-color: red;
 }
 
 .headercontent > div{
@@ -39,9 +40,9 @@ p{
 
 .actoresContainer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     gap: 20px;
     margin-top: 20px;
     border-radius: 14px;
@@ -51,7 +52,6 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: center;
     gap: 20px;
     padding: 10px;
     width: 1200px;

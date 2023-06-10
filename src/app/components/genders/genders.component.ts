@@ -21,4 +21,5 @@ export class GendersComponent {
   peliculaXGenero(id:number){
       this.router.navigate(['/list-genre'], {queryParams: {id: id}})
   }
+
 }

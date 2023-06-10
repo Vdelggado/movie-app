@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatosMovieService } from '../../service/datos-movie.service';
-import { Tipos } from '../../models/card.model';
+import { Actor, Tipos } from '../../models/card.model';
 @Component({
   selector: 'app-movie-descrip',
   templateUrl: './movie-descrip.component.html',
@@ -27,8 +27,9 @@ export class MovieDescripComponent {
     tagline: '',
     genres: []
   };
-  arrActores : any = [];
+  arrActores : Actor[] = [];
   imgUrl :string = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2';
+  defaultImg: string = '../../../assets/unknown-user.png';
   constructor(private route: ActivatedRoute, private dataService: DatosMovieService ) { }
 
   ngOnInit(): void {
@@ -36,6 +37,13 @@ export class MovieDescripComponent {
       this.id = params['id'];
     });
   this.dataService.detallePelicula(this.id).subscribe((datos: Tipos) => this.arrDetalle = datos);
-  this.dataService.obtenerActores(this.id).subscribe((datos: any) => this.arrActores = datos);
+  this.dataService.obtenerActores(this.id).subscribe((datos: any) => {
+    datos.cast.forEach((element:Actor)=>{
+      let {name,profile_path,character} = element;
+      profile_path===null? profile_path = this.defaultImg:profile_path = this.imgUrl+profile_path;
+      this.arrActores.push({name,profile_path,character})
+    })
+  });
+
 }
 }

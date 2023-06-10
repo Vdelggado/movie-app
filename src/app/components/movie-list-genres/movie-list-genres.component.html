@@ -1,6 +1,6 @@
 <main>
   <section>
-    <div class="movie-container" *ngFor="let pelicula of peliculas">
+    <div class="movie-container" *ngFor="let pelicula of peliculas" (click) = "descripcionPelicula(pelicula.id)">
       <img src="{{imgUrl+pelicula.poster_path}}" alt="">
       <div class="movie-info">
         <h3>{{pelicula.title}}</h3>

@@ -27,8 +27,13 @@ interface Generos{
     id: number;
     name: string;
 }
+interface Actor{
+  name: string;
+  profile_path:string;
+  character: string;
+}
 
 
 
-export { Respuesta, Tipos,Generos };
+export { Respuesta, Tipos,Generos, Actor };
 

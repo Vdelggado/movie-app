@@ -27,9 +27,9 @@ export class DatosMovieService {
   }
 
   obtenerGeneros(){
-    return this.httpCLient.get<Generos>('https://api.themoviedb.org/3/genre/movie/list?api_key=9b3a1c9fc48ea5311d0a780bfb57f952');
+    return this.httpCLient.get('https://api.themoviedb.org/3/genre/movie/list?api_key=9b3a1c9fc48ea5311d0a780bfb57f952');
   }
   peliculaXGenero(id: number){
-    return this.httpCLient.get<Respuesta>(`https://api.themoviedb.org/3/discover/movie?api_key=9b3a1c9fc48ea5311d0a780bfb57f952&with_genres=${id}`)
+    return this.httpCLient.get<Respuesta>(`https://api.themoviedb.org/3/discover/movie?api_key=9b3a1c9fc48ea5311d0a780bfb57f952&with_genres=${id}`);
   }
 }
